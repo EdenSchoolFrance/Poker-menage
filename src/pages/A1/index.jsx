@@ -13,6 +13,7 @@ function Page() {
   const [selectedStudents, setSelectedStudents] = useState(
     Array.from(STUDENTS),
   );
+  const [assignedStudents, setAssignedStudents] = useState([])
 
   function isStudentAvailable(student) {
     return selectedStudents.some((s) => s === student);
@@ -48,6 +49,7 @@ function Page() {
     }));
 
     console.log("Les étudiants sélectionnés sont : ", assignments)
+    setAssignedStudents(assignments)
   }
 
   return (
