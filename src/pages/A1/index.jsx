@@ -9,11 +9,14 @@ import { STUDENTS } from "./data";
 function Page() {
   const [selectedStudents, setSelectedStudents] = useState(Array.from(STUDENTS))
 
+  function isStudentAvailable(student) {
+    return selectedStudents.some(s => s === student)
+  }
+
   function onSelectedStudent(selectedStudent) {
     let newSelectedStudents = []
 
-    if (selectedStudents.some(student => student === selectedStudent)) {
-      console.log("Foo")
+    if (isStudentAvailable(selectedStudent)) {
       newSelectedStudents = selectedStudents.filter(student => student !== selectedStudent)
     } else {
       newSelectedStudents = [...selectedStudents, selectedStudent]
@@ -33,6 +36,7 @@ function Page() {
               key={student}
               name={student}
               onClick={() => onSelectedStudent(student)}$
+              isAvailable={isStudentAvailable(student)}
             / >
           ))}
         </ul>
