@@ -13,7 +13,7 @@ function Page() {
   const [selectedStudents, setSelectedStudents] = useState(
     Array.from(STUDENTS),
   );
-  const [assignedStudents, setAssignedStudents] = useState([])
+  const [assignedStudents, setAssignedStudents] = useState([]);
 
   function isStudentAvailable(student) {
     return selectedStudents.some((s) => s === student);
@@ -34,12 +34,6 @@ function Page() {
   }
 
   function onChooseStudents() {
-    console.log("===");
-    console.log("Ok, let's go!");
-    console.log("===");
-
-    console.log(selectedStudents);
-
     const shuffledStudents = shuffleArray([...selectedStudents]);
     const shuffledTasks = shuffleArray([...TASKS]);
 
@@ -48,8 +42,36 @@ function Page() {
       task: task,
     }));
 
-    console.log("Les étudiants sélectionnés sont : ", assignments)
-    setAssignedStudents(assignments)
+    console.log("Les étudiants sélectionnés sont : ", assignments);
+    setAssignedStudents(assignments);
+  }
+
+  if (assignedStudents.length) {
+    return (
+      <Main>
+        <div className="w-6/12">
+          <NavLink className="text-white text-lg mb-8 block" to="/">
+            Revenir à l'accueil
+          </NavLink>
+          <H1 css="mb-20" content="Et les nominés sont ..." />
+          <ul>
+            {assignedStudents.map((assignedStudent) => (
+              <li key={assignedStudent.student}>
+                Qui ? {assignedStudent.student}
+                <br />
+                Quoi ? {assignedStudent.task}
+              </li>
+            ))}
+          </ul>
+          <button
+          onClick={() => setAssignedStudents([])}
+          className="border-2 border-white mx-auto block py-2 px-4 rounded-lg text-white font-bold"
+        >
+          Modifier les participants
+        </button>
+        </div>
+      </Main>
+    );
   }
 
   return (
