@@ -5,7 +5,9 @@ import Main from "../../components/Main";
 import H1 from "../../components/H1";
 import Student from "../../components/Student";
 
-import { STUDENTS } from "./data";
+import { shuffleArray } from "../../utils/shuffleArray";
+
+import { STUDENTS, TASKS } from "./data";
 
 function Page() {
   const [selectedStudents, setSelectedStudents] = useState(
@@ -31,11 +33,21 @@ function Page() {
   }
 
   function onChooseStudents() {
-    console.log("===")
-    console.log("Ok, let's go!")
-    console.log("===")
-    
-    console.log(selectedStudents)
+    console.log("===");
+    console.log("Ok, let's go!");
+    console.log("===");
+
+    console.log(selectedStudents);
+
+    const shuffledStudents = shuffleArray([...selectedStudents]);
+    const shuffledTasks = shuffleArray([...TASKS]);
+
+    const assignments = shuffledTasks.map((task, index) => ({
+      student: shuffledStudents[index],
+      task: task,
+    }));
+
+    console.log("Les étudiants sélectionnés sont : ", assignments)
   }
 
   return (
@@ -55,7 +67,10 @@ function Page() {
             />
           ))}
         </ul>
-        <button onClick={onChooseStudents} className="border-2 border-white mx-auto block py-2 px-4 rounded-lg text-white font-bold">
+        <button
+          onClick={onChooseStudents}
+          className="border-2 border-white mx-auto block py-2 px-4 rounded-lg text-white font-bold"
+        >
           Lancer le tirage au sort
         </button>
       </div>

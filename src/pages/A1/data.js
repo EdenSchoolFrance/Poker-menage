@@ -20,4 +20,12 @@ const STUDENTS = [
     "Youssef"
 ]
 
-export { STUDENTS }
+const TASKS = [
+    "Sol",
+    "Bibliotheque",
+    "Fenêtes",
+    "Tableaux",
+    "Ordinateurs"
+]
+
+export { STUDENTS, TASKS }
