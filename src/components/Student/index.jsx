@@ -12,7 +12,7 @@ function Component({ name, onClick, isAvailable }) {
 
   return (
     <li
-      className="bg-slate-700 text-yellow-300 flex justify-center items-center py-3 cursor-pointer"
+      className="bg-white text-teal-500 flex justify-center items-center py-3 cursor-pointer"
       onClick={() => onClick(name)}
     >
       {name}

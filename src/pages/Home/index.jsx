@@ -7,7 +7,7 @@ function Page() {
   return (
     <Main>
       <div>
-        <H1 content="Choisis ta classe" />
+        <H1 css="mb-8" content="Choisis ta classe" />
         <ul className="flex gap-4">
           <li className="border-2 border-white w-2/4 h-10">
             <NavLink

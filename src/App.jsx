@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router"
+
+import "@fontsource-variable/unbounded"
+import "@fontsource-variable/inter"
 import "./index.css"
 
 import HomePage from "./pages/Home"
