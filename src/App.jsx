@@ -11,7 +11,7 @@ import A2Page from "./pages/A2"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Poker-menage">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/a1" element={<A1Page />} />
