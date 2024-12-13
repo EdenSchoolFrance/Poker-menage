@@ -4,6 +4,6 @@
 
 @layer components {
     .nav-link {
-        @apply h-full w-full flex items-center justify-center text-white duration-150 hover:bg-white hover:text-teal-300;
+        @apply h-full w-full flex items-center justify-center text-white duration-150 hover:bg-white hover:text-puerto-ricko;
     }
 }

@@ -1,5 +1,9 @@
 function Component({ children }) {
-    return <main className="bg-teal-500 min-h-screen w-screen flex items-center justify-center">{children}</main>
+  return (
+    <main className="bg-puerto-ricko min-h-screen w-screen flex items-center justify-center font-body">
+      {children}
+    </main>
+  );
 }
 
-export default Component
+export default Component;

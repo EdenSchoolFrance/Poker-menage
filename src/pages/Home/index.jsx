@@ -9,7 +9,7 @@ function Page() {
       <div>
         <H1 css="mb-8" content="Choisis ta classe" />
         <ul className="flex gap-4">
-          <li className="border-2 border-white w-2/4 h-10">
+          <li className="border-2 rounded border-white w-2/4 h-10">
             <NavLink
               className="nav-link"
               to="/a1"
@@ -17,7 +17,7 @@ function Page() {
               A1
             </NavLink>
           </li>
-          <li className="border-2 border-white w-2/4 h-10">
+          <li className="border-2 rounded border-white w-2/4 h-10">
             <NavLink
               className="nav-link"
               to="/a2"

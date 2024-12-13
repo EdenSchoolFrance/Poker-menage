@@ -5,9 +5,16 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      "lucky-point": "#241C71",
+      "puerto-ricko": "#3CBBB7",
+      silver: "#BBB",
+      supernova: "#fece09",
+      white: "#FFF"
+    },
     fontFamily: {
-      heading: ["unbounded", "sans-serif"],
-      body: ["inter", "sans-serif"]
+      body: ["Inter Variable", "sans-serif"],
+      heading: ["Unbounded Variable", "sans-serif"]
     },
     extend: {},
   },
