@@ -8,11 +8,12 @@ import Student from "../../components/Student";
 
 import { shuffleArray } from "../../utils/shuffleArray";
 
-import { STUDENTS, TASKS } from "./data";
+import { A1_STUDENTS } from "../../data/students";
+import { TASKS} from "../../data/tasks"
 
 function Page() {
   const [selectedStudents, setSelectedStudents] = useState(
-    Array.from(STUDENTS),
+    Array.from(A1_STUDENTS),
   );
   const [assignedStudents, setAssignedStudents] = useState([]);
 
@@ -43,7 +44,6 @@ function Page() {
       task: task,
     }));
 
-    console.log("Les étudiants sélectionnés sont : ", assignments);
     setAssignedStudents(assignments);
   }
 
@@ -79,7 +79,7 @@ function Page() {
         <GoBackButton />
         <H1 css="mb-20" content="Bienvenue chez les A1" />
         <ul className="grid grid-cols-4 gap-4 mb-12">
-          {STUDENTS.map((student) => (
+          {A1_STUDENTS.map((student) => (
             <Student
               key={student}
               name={student}
